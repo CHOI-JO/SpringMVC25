@@ -6,9 +6,10 @@ import org.springframework.stereotype.Component;
 import lombok.Data;
 import lombok.Setter;
 
-@Component //스프링이 의존성 처리해줘
+@Component
 @Data
 public class Restaurant {
+
 	@Setter(onMethod_ = @Autowired)
-	private Chef chef;
+	private Chef chef;	// Chef chef = new Chef();	
 }
