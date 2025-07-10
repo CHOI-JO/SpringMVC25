@@ -46,7 +46,7 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
-		<!-- Logging -->
+		<!-- Logging  보안 이슈로 버전 향상 해야 됨
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -63,8 +63,8 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
-		</dependency>
-		<!-- 보안 이슈로 버전 향상 해야 됨
+		</dependency>-->
+		<!--
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -115,12 +115,19 @@
 			<version>1</version>
 		</dependency>
 
-		<!-- Servlet -->
+		<!-- Servlet 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
+		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+    		<groupId>javax.servlet</groupId>
+    		<artifactId>javax.servlet-api</artifactId>
+    		<version>3.0.1</version>
+    		<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
@@ -210,12 +217,6 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<dependency>
-    		<groupId>org.bgee.log4jdbc-log4j2</groupId>
-    		<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
-    		<version>1.16</version>
-		</dependency>
-
 		<!-- root-context.xml 코드 변경  
 		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 			<property name="dataSource" ref="dataSource"></property>
@@ -226,6 +227,19 @@
 		sql처리를 mapper에서 찾는다.  -> 인터페이스 + xml로 sql 처리함.
 				
 		-->
+		
+		<!-- 로그출력을 표형식으로 구현 https://mvnrepository.com/artifact/org.bgee.jdbc-log4j2/log4jdbc-log4j2-jdbc4.1 -->
+		<dependency>
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+			<version>1.16</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.4</version>		
+		</dependency>
 	</dependencies> <!-- 의존성 주입 종료 -->
 	<build>
 		<plugins>
