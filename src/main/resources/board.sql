@@ -12,6 +12,7 @@ create table tbl_board(
 	updatedate date default sysdate		-- 수정일 (자동으로 DB날짜가 입력)
 ); -- board 테이블 생성
 
+drop table tbl_board;
 
 alter table tbl_board add constraint pk_board primary key (bno);
 -- tbl_board 구조변경(수정) 기본기를 bno로 지정함.
